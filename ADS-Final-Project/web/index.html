@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Aho–Corasick Visualization</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+    }
+    #container {
+      display: flex;
+      gap: 2rem;
+    }
+    #controls {
+      width: 300px;
+    }
+    #chartContainer {
+      border: 1px solid #ccc;
+      width: 900px;
+      height: 600px;
+      position: relative;
+    }
+    #chart {
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    #legend {
+      margin-top: 1rem;
+    }
+    .legend-item {
+      margin-bottom: 0.3rem;
+    }
+    .color-box {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 0.5em;
+      border: 1px solid #000;
+    }
+
+    #results {
+      white-space: pre-wrap;
+      margin-top: 1rem;
+      border: 1px solid #aaa;
+      padding: 0.5rem;
+      background: #fafafa;
+    }
+
+
+    .link {
+      fill: none;
+      stroke: green;
+      stroke-width: 2px;
+    }
+    .fail-link {
+      fill: none;
+      stroke: red;
+      stroke-dasharray: 3,3;
+      stroke-width: 2px;
+      opacity: 0.8;
+    }
+    .node circle {
+      fill: #fff;
+      stroke: #333;
+      stroke-width: 1.5px;
+    }
+    .node text {
+      font-size: 12px;
+      text-anchor: start;
+      alignment-baseline: middle;
+      pointer-events: none;
+    }
+    .link-label {
+      font-size: 11px;
+      fill: blue;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+<h1>Aho–Corasick with Colored Patterns</h1>
+
+<div id="container">
+  <div id="controls">
+    <label>Patterns (comma-separated):</label><br/>
+    <input id="patternsInput" type="text" size="40" placeholder="e.g. he, her, eye, iris" /><br/><br/>
+
+    <label>Text to search:</label><br/>
+    <textarea id="textInput" rows="4" cols="35"></textarea><br/><br/>
+
+    <button id="buildBtn">Build &amp; Search</button>
+
+    <div id="legend"></div>
+
+    <div id="results"></div>
+  </div>
+
+  <div id="chartContainer">
+    <svg id="chart"></svg>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
