@@ -2,7 +2,7 @@
 # Jenkins on Rocky Linux 9
 -----------------------------------------------------------------
 
-Ce este Jenkinsss?
+Ce este Jenkinssss?
 Jenkins este un automation server bazat pe Java cu care putem defini continuous integration si continuous delivery (CI/CD) jobs sau pipelines.
 Continuous integration (CI) este o practica DevOps in care membrii unei echipe commit modificari ale codului regulat in GIT, dupa care porneste un build si ruleaza teste automate. Continuous delivery (CD) este tot o practica DevOps prin care modificarile codului sunt deploy-ate in productie.
 
